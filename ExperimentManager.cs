@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,7 +8,7 @@ public class ExperimentManager : MonoBehaviour
     [SerializeField] private int reps = 5;
     [SerializeField] private float lo = 1f;
     [SerializeField] private float hi = 4f;
-    [SerializeField] private int levels = 5;
+    [SerializeField] private int levels = 6;
     [SerializeField] private string outfile = "results.csv";
 
     [SerializeField] private Rigidbody target;
@@ -52,7 +50,7 @@ public class ExperimentManager : MonoBehaviour
             (masses[rr], masses[ii]) = (masses[ii], masses[rr]);
         }
 
-        Debug.Log($"[{string.Join(", ", masses)}]");
+        //Debug.Log($"[{string.Join(", ", masses)}]");
 
         // set initial mass value
         target.mass = masses[0];
