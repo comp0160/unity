@@ -193,10 +193,10 @@ public class ExperimentManager8 : MonoBehaviour
     {
         string outfile = Path.Combine(Application.persistentDataPath, $"{experiment}.csv");
         using StreamWriter writer = new StreamWriter(outfile);
-        writer.WriteLine($"Trial,{Trial.Header()}");
+        writer.WriteLine($"Trial,{Trial.Header()},Response");
         for (int ii = 0; ii < trials.Length; ++ii)
         {
-            writer.WriteLine($"{ii + 1},{trials[ii].Values()}");
+            writer.WriteLine($"{ii + 1},{trials[ii].Values()},{responses[ii]}");
         }
     }
 }
